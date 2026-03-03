@@ -7,3 +7,4 @@ data "aws_ami" "Redhat" {
     values = ["Redhat-9-DevOps-Practice"]
   }
 }
+
