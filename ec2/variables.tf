@@ -12,6 +12,7 @@ variable "instances"{
     default = {
         mongodb = {
             instance_type="t3.micro"
+            ami_id = "ami_id"
         }
         redis = {
             instance_type="t3.micro"

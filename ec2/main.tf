@@ -3,12 +3,12 @@ resource "aws_instance" "this" {
 #   count = 10
   for_each = var.instances
   ami           = data.aws_ami.Redhat.id
-  instance_type = each.value
+  instance_type = each.value.instance_type
   vpc_security_group_ids=[aws_security_group.allow_all.id]
 
   tags = {
+    Name = "${each.key}"
     # Name = "${var.instances[count.index]}"
-    Name = each.value
   }
 
   depends_on=[aws_security_group.allow_all]
